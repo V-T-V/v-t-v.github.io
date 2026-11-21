@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>经纬 · 古籍数字人文六站</title>
+<style>
+  :root{
+    --bg:#171310; --paper:#211b15; --ink:#d8cbb4; --ink-dim:#8a7d68;
+    --cinnabar:#b23a2e; --gold:#c9a45c; --line:#3a3128;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:var(--bg); color:var(--ink); min-height:100vh;
+    font-family:"Kaiti SC","KaiTi","STKaiti","Noto Serif SC",serif;
+    display:flex; flex-direction:column; align-items:center; padding:48px 20px 40px;
+  }
+  header{text-align:center; margin-bottom:40px}
+  header h1{
+    font-size:56px; letter-spacing:18px; text-indent:18px; font-weight:400; color:var(--gold);
+  }
+  header .sub{margin-top:14px; color:var(--ink-dim); font-size:15px; letter-spacing:4px}
+  header .rule{
+    width:200px; height:1px; margin:20px auto 0;
+    background:linear-gradient(90deg,transparent,var(--cinnabar),transparent);
+  }
+  .grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:22px;
+    max-width:1060px; width:100%;
+  }
+  a.card{
+    display:block; text-decoration:none; color:inherit;
+    background:var(--paper); border:1px solid var(--line); border-radius:4px;
+    padding:26px 24px 20px; position:relative; overflow:hidden;
+    transition:border-color .25s, transform .25s;
+  }
+  a.card:hover{border-color:var(--gold); transform:translateY(-3px)}
+  .card .era{
+    position:absolute; top:0; right:0; background:var(--cinnabar); color:#f5ead5;
+    font-size:12px; padding:3px 10px; letter-spacing:2px; border-radius:0 3px 0 4px;
+  }
+  .card h2{font-size:24px; font-weight:400; letter-spacing:6px; color:var(--gold)}
+  .card .book{margin-top:6px; font-size:13px; color:var(--ink-dim); letter-spacing:1px}
+  .card .par{margin-top:12px; font-size:13.5px; line-height:1.7}
+  .card .num{
+    margin-top:14px; padding-top:12px; border-top:1px dashed var(--line);
+    font-size:12.5px; color:var(--ink-dim); line-height:1.9;
+  }
+  .card .num b{color:var(--ink); font-weight:400}
+  .card .go{
+    margin-top:12px; display:inline-block; border:1px solid var(--gold); color:var(--gold);
+    font-size:12.5px; letter-spacing:3px; padding:5px 16px; border-radius:2px;
+  }
+  a.card:hover .go{background:var(--gold); color:#1a1512}
+  .bridge{
+    max-width:1060px; width:100%; margin-top:42px;
+    background:var(--paper); border:1px solid var(--line); border-radius:4px; padding:24px 28px;
+  }
+  .bridge h3{font-size:16px; font-weight:400; letter-spacing:4px; color:var(--gold); margin-bottom:14px}
+  .bridge p{font-size:13.5px; line-height:2; color:var(--ink)}
+  .bridge .dim{color:var(--ink-dim); font-size:12.5px; margin-top:10px}
+  footer{
+    margin-top:36px; color:var(--ink-dim); font-size:12px; letter-spacing:2px;
+    text-align:center; line-height:2;
+  }
+  footer a{color:var(--ink-dim); text-decoration:none; border-bottom:1px dotted var(--ink-dim)}
+  footer a:hover{color:var(--gold); border-color:var(--gold)}
+  @media (max-width:880px){ .grid{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:580px){ .grid{grid-template-columns:1fr} header h1{font-size:38px;letter-spacing:10px} }
+</style>
+</head>
+<body>
+<header>
+  <h1>经 纬</h1>
+  <div class="sub">古籍数字人文 · 六站同构 · 点线织史</div>
+  <div class="rule"></div>
+</header>
+
+<nav class="grid">
+  <a class="card" href="https://v-t-v.github.io/fangyu-jingwei/">
+    <span class="era">明末</span>
+    <h2>方舆经纬</h2>
+    <div class="book">顾祖禹 · 读史方舆纪要 · 一百三十卷</div>
+    <div class="par">以<b>点</b>织明末版图——府治州县密布舆图，九边垣塞、九朝形势推演。</div>
+    <div class="num"><b>府州 380 · 县 1111</b> · 全文 260 万字<br>关隘 50 · 大事定位 29</div>
+    <span class="go">入 图</span>
+  </a>
+  <a class="card" href="https://v-t-v.github.io/shuidao-jingwei/">
+    <span class="era">北魏</span>
+    <h2>水道经纬</h2>
+    <div class="book">郦道元 · 水经注 · 四十卷</div>
+    <div class="par">以<b>线</b>溯江河——循水而读，经注分离，昆仑至渤海沿河飞行。</div>
+    <div class="num"><b>水道 112</b> · 引书考古 428 种<br>顾祖禹引水经注 940 次</div>
+    <span class="go">循 水</span>
+  </a>
+  <a class="card" href="https://v-t-v.github.io/xiake-jingwei/">
+    <span class="era">明</span>
+    <h2>霞客经纬</h2>
+    <div class="book">徐弘祖 · 徐霞客游记 · 前半部廿二篇</div>
+    <div class="par">以<b>线 + 时序</b>重走万里行程——日记逐日推进，地图沿线随行。</div>
+    <div class="num"><b>日条 506 · 锚点 300</b> · 里程 15,077 km<br>原文 23.4 万字（滇黔游未得，如实）</div>
+    <span class="go">启 程</span>
+  </a>
+  <a class="card" href="https://v-t-v.github.io/qielan-jingwei/">
+    <span class="era">北魏</span>
+    <h2>伽蓝经纬</h2>
+    <div class="book">杨衒之 · 洛阳伽蓝记 · 五卷</div>
+    <div class="par">以<b>城</b>复现神都——自绘北魏洛阳城图，按卷巡城，宋云西行二十站。</div>
+    <div class="num"><b>伽蓝 43</b> · 墙门 13 · 里坊 24<br>白文 3.6 万字 · 西行书证 20/20</div>
+    <span class="go">入 城</span>
+  </a>
+  <a class="card" href="https://v-t-v.github.io/yuanhe-jingwei/">
+    <span class="era">唐</span>
+    <h2>元和经纬</h2>
+    <div class="book">李吉甫 · 元和郡县图志 · 存三十四卷</div>
+    <div class="par">以<b>点</b>列元和版图——十道分镇，州印县点，卷佚如实灰显。</div>
+    <div class="num"><b>州府 227（坐标全覆盖）· 县 1081</b><br>语料 23.7 万字 · 卷佚 31 州份标注</div>
+    <span class="go">入 图</span>
+  </a>
+  <a class="card" href="https://v-t-v.github.io/huanyu-jingwei/">
+    <span class="era">宋</span>
+    <h2>寰宇经纬</h2>
+    <div class="book">乐史 · 太平寰宇记 · 存一百九十二卷</div>
+    <div class="par">以<b>点</b>总太平寰宇——十三道着色，县微点缩放展开，四夷并陈。</div>
+    <div class="num"><b>府州军监 361 · 县 1281</b> · 全文 81.9 万字<br>县上图 626（附郭+三角化）</div>
+    <span class="go">入 图</span>
+  </a>
+</nav>
+
+<section class="bridge">
+  <h3>站际互查 · 桥网</h3>
+  <p>
+    霞客 → 方舆：300 锚点匹配 175 府县　·　伽蓝 → 水经注：谷洛水注命中 21 处（阊阖门 6 次）　·
+    元和(唐) ↔ 寰宇(宋)：同名 192 州　·　寰宇(宋) → 方舆(明)：对应 169 府（升府 34 · 改名 49）
+  </p>
+  <p class="dim">
+    诸数字各出自其站 docs/stats.json 与桥数据（脚本产出，详见各站 README）。坐标多为整编示意（src:derived），学术引用请循各站置信分级与 CITATION.cff。
+  </p>
+</section>
+
+<footer>
+  六站源码：<a href="https://github.com/V-T-V?tab=repositories&q=jingwei">github.com/V-T-V · 经纬系列</a><br>
+  经纬系列 · 六站 · 二〇二六年十一月
+</footer>
+</body>
+</html>
