@@ -14,6 +14,8 @@
 | 元和经纬 | 元和郡县图志（唐·李吉甫） | 点列州县 | [yuanhe-jingwei](https://v-t-v.github.io/yuanhe-jingwei/) |
 | 寰宇经纬 | 太平寰宇记（宋·乐史） | 点总寰宇 | [huanyu-jingwei](https://v-t-v.github.io/huanyu-jingwei/) |
 
+方法论沉淀：[docs/METHOD.md](docs/METHOD.md)——数据纪律 / 前端架构 / 十层验证兵器谱（每层对应一种被歼灭的假绿）/ 多 agent 会战组织 / 开新站 checklist。
+
 站际互查桥（数字各出自各站 `docs/stats.json`）：
 
 - 霞客 → 方舆：300 锚点匹配 175 府县
