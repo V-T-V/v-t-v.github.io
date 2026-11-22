@@ -84,8 +84,14 @@ def ext_huanyu():
             "chars": s["total_chars"], "mapped": s["xian_coord"]}
 
 
+def ext_hanzhi():
+    s = loadj("HSDZ/docs/stats.json")
+    return {"states": s["states"], "counties": s["counties_parsed"], "chars": s["corpus_chars"]}
+
+
 EXTRACTORS = {"fangyu": ext_fangyu, "shuidao": ext_shuidao, "xiake": ext_xiake,
-              "qielan": ext_qielan, "yuanhe": ext_yuanhe, "huanyu": ext_huanyu}
+              "qielan": ext_qielan, "yuanhe": ext_yuanhe, "huanyu": ext_huanyu,
+              "hanzhi": ext_hanzhi}
 
 
 def collect():
@@ -98,8 +104,8 @@ def collect():
 # ── 门户卡片数字 token 期望（模板与 index.html 卡片逐一对应）──
 
 def card_tokens(d):
-    fy, sd, xk, ql, yh, hy = (d["fangyu"], d["shuidao"], d["xiake"],
-                              d["qielan"], d["yuanhe"], d["huanyu"])
+    fy, sd, xk, ql, yh, hy, hz = (d["fangyu"], d["shuidao"], d["xiake"],
+                                   d["qielan"], d["yuanhe"], d["huanyu"], d["hanzhi"])
     return {
         "fangyu-jingwei": ["府州 %d" % fy["fus"], "县 %d" % fy["counties"]],
         "shuidao-jingwei": ["水道 %d" % sd["waterways"], "引书考古 %d 种" % sd["cites"],
@@ -111,6 +117,8 @@ def card_tokens(d):
         "yuanhe-jingwei": ["州府 %d" % yh["states"], "县 %d" % yh["counties"], "语料 %s" % fmt_wan(yh["chars"])],
         "huanyu-jingwei": ["府州军监 %d" % hy["prefects"], "县 %d" % hy["counties"],
                            "全文 %s" % fmt_wan(hy["chars"]), "县上图 %d" % hy["mapped"]],
+        "hanzhi-jingwei": ["郡国 %d" % hz["states"], "县 %d" % hz["counties"],
+                           "语料 %s" % fmt_wan(hz["chars"])],
     }
 
 

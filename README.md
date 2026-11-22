@@ -13,6 +13,7 @@
 | 伽蓝经纬 | 洛阳伽蓝记（北魏·杨衒之） | 城市尺度 | [qielan-jingwei](https://v-t-v.github.io/qielan-jingwei/) |
 | 元和经纬 | 元和郡县图志（唐·李吉甫） | 点列州县 | [yuanhe-jingwei](https://v-t-v.github.io/yuanhe-jingwei/) |
 | 寰宇经纬 | 太平寰宇记（宋·乐史） | 点总寰宇 | [huanyu-jingwei](https://v-t-v.github.io/huanyu-jingwei/) |
+| 汉志经纬 | 汉书·地理志（汉·班固） | 点起纵贯 | [hanzhi-jingwei](https://v-t-v.github.io/hanzhi-jingwei/) |
 
 方法论沉淀：[docs/METHOD.md](docs/METHOD.md)——数据纪律 / 前端架构 / 十层验证兵器谱（每层对应一种被歼灭的假绿）/ 多 agent 会战组织 / 开新站 checklist。
 
