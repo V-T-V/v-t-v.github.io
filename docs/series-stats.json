@@ -1,0 +1,35 @@
+{
+  "fangyu": {
+    "fus": 380,
+    "counties": 1111
+  },
+  "shuidao": {
+    "waterways": 112,
+    "cites": 428,
+    "crossref_total": 940
+  },
+  "xiake": {
+    "pieces": 52,
+    "days": 969,
+    "anchored": 498,
+    "km": 24631,
+    "chars": 469749
+  },
+  "qielan": {
+    "temples": 43,
+    "gates": 13,
+    "wards": 32,
+    "chars": 35999
+  },
+  "yuanhe": {
+    "states": 227,
+    "counties": 1081,
+    "chars": 237438
+  },
+  "huanyu": {
+    "prefects": 361,
+    "counties": 1296,
+    "chars": 818819,
+    "mapped": 647
+  }
+}

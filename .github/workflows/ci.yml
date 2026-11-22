@@ -1,0 +1,35 @@
+# 经纬门户 · 系列账本 CI——「凡数字出自脚本」的最后一环：
+# 六站数据演进时，门户卡片数字若未同步即红。周六 10:30 CST 收六站审计时间链的尾。
+# 跨仓读取：浅克隆六站到工作区父目录，与本地 D:\W_A_W 同构布局后跑 --check。
+name: 系列账本
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "30 2 * * 6"   # 周六 02:30 UTC = 中国 10:30（六站审计 09:30–10:20 之后的收口）
+
+permissions:
+  contents: read
+
+jobs:
+  ledger:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 浅克隆六站（与本地同构布局）
+        run: |
+          set -e
+          BASE="$GITHUB_WORKSPACE/.."
+          clone() { git clone --quiet --depth 1 "https://github.com/V-T-V/$1-jingwei.git" "$BASE/$2"; }
+          clone fangyu  HHH
+          clone shuidao SDJW
+          clone xiake   XXK
+          clone qielan  LYGL
+          clone yuanhe  YHJZ
+          clone huanyu  TPHY
+          ls -d "$BASE"/HHH "$BASE"/SDJW "$BASE"/XXK "$BASE"/LYGL "$BASE"/YHJZ "$BASE"/TPHY
+      - name: 系列账本核对（门户数字 vs 六站脚本产物）
+        run: python tools/build_series_stats.py --check
