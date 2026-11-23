@@ -15,6 +15,7 @@
 | 寰宇经纬 | 太平寰宇记（宋·乐史） | 点总寰宇 | [huanyu-jingwei](https://v-t-v.github.io/huanyu-jingwei/) |
 | 汉志经纬 | 汉书·地理志（汉·班固） | 点起纵贯 | [hanzhi-jingwei](https://v-t-v.github.io/hanzhi-jingwei/) |
 | 梦华经纬 | 东京梦华录（北宋·孟元老） | 城忆汴京 | [menghua-jingwei](https://v-t-v.github.io/menghua-jingwei/) |
+| 西域经纬 | 大唐西域记（唐·玄奘） | 线+里数链 | [xiyu-jingwei](https://v-t-v.github.io/xiyu-jingwei/) |
 
 方法论沉淀：[docs/METHOD.md](docs/METHOD.md)——数据纪律 / 前端架构 / 十层验证兵器谱（每层对应一种被歼灭的假绿）/ 多 agent 会战组织 / 开新站 checklist。
 

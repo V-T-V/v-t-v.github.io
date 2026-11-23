@@ -97,9 +97,14 @@ def ext_menghua():
             "suishi": len(sd["suishi"]), "chars": st["total_chars"]}
 
 
+def ext_xiyu():
+    m = loadj("XYJ/docs/stats.json")["meta"]
+    return {"countries": m["countries"], "anchors": m["anchors"], "chars": m["chars"], "km": m["liKm"]}
+
+
 EXTRACTORS = {"fangyu": ext_fangyu, "shuidao": ext_shuidao, "xiake": ext_xiake,
               "qielan": ext_qielan, "yuanhe": ext_yuanhe, "huanyu": ext_huanyu,
-              "hanzhi": ext_hanzhi, "menghua": ext_menghua}
+              "hanzhi": ext_hanzhi, "menghua": ext_menghua, "xiyu": ext_xiyu}
 
 
 def collect():
@@ -112,8 +117,9 @@ def collect():
 # ── 门户卡片数字 token 期望（模板与 index.html 卡片逐一对应）──
 
 def card_tokens(d):
-    fy, sd, xk, ql, yh, hy, hz, mh = (d["fangyu"], d["shuidao"], d["xiake"],
-                                       d["qielan"], d["yuanhe"], d["huanyu"], d["hanzhi"], d["menghua"])
+    fy, sd, xk, ql, yh, hy, hz, mh, xy = (d["fangyu"], d["shuidao"], d["xiake"],
+                                           d["qielan"], d["yuanhe"], d["huanyu"], d["hanzhi"],
+                                           d["menghua"], d["xiyu"])
     return {
         "fangyu-jingwei": ["府州 %d" % fy["fus"], "县 %d" % fy["counties"]],
         "shuidao-jingwei": ["水道 %d" % sd["waterways"], "引书考古 %d 种" % sd["cites"],
@@ -129,6 +135,8 @@ def card_tokens(d):
                            "语料 %s" % fmt_wan(hz["chars"])],
         "menghua-jingwei": ["城门 %d" % mh["gates"], "街市 %d" % mh["places"],
                             "河道 %d" % mh["rivers"], "语料 %s" % fmt_wan(mh["chars"])],
+        "xiyu-jingwei": ["国 %d" % xy["countries"], "锚点 %d" % xy["anchors"],
+                         "里程 %s km" % thousands(xy["km"]), "净文 %s" % fmt_wan(xy["chars"])],
     }
 
 

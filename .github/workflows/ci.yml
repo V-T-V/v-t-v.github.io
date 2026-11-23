@@ -32,6 +32,7 @@ jobs:
           clone huanyu  TPHY
           clone hanzhi  HSDZ
           clone menghua MHJH
-          ls -d "$BASE"/HHH "$BASE"/SDJW "$BASE"/XXK "$BASE"/LYGL "$BASE"/YHJZ "$BASE"/TPHY "$BASE"/HSDZ "$BASE"/MHJH
+          clone xiyu    XYJ
+          ls -d "$BASE"/HHH "$BASE"/SDJW "$BASE"/XXK "$BASE"/LYGL "$BASE"/YHJZ "$BASE"/TPHY "$BASE"/HSDZ "$BASE"/MHJH "$BASE"/XYJ
       - name: 系列账本核对（门户数字 vs 六站脚本产物）
         run: python tools/build_series_stats.py --check
